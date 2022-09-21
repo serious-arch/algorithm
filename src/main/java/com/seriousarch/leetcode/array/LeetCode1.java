@@ -7,7 +7,7 @@ import java.util.Map;
  * 两数之和
  * See {@linktourl https://leetcode.cn/problems/two-sum/}
  */
-public class TwoSum {
+public class LeetCode1 {
     /**
      * 哈希表法
      * 时间复杂度：O(N)
