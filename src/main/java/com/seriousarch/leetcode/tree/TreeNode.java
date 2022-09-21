@@ -1,4 +1,4 @@
-package com.seriousarch.datastructure;
+package com.seriousarch.leetcode.tree;
 
 /**
  * 二叉树
