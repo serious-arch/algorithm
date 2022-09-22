@@ -4,7 +4,7 @@ package com.seriousarch.leetcode.string;
  * 替换空格
  * See {@linktourl https://leetcode.cn/problems/ti-huan-kong-ge-lcof/}
  */
-public class LeetCode5 {
+public class LeetCodeOffer5 {
     /**
      * 时间复杂度：O(n)
      * 空间复杂度：O(n)
