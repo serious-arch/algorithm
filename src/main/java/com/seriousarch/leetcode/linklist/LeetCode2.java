@@ -26,9 +26,11 @@ public class LeetCode2 {
         int carry = 0;
         while (l1 != null || l2 != null || carry != 0) {
             int sum = (l1 != null ? l1.val : 0) + (l2 != null ? l2.val : 0) + carry;
+            // 通过取模，拿到个位上的数
             current.next = new ListNode(sum % 10);
             current = current.next;
 
+            // 取进位
             carry = sum / 10;
 
             if (l1 != null) {

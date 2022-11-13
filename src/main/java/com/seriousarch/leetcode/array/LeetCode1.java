@@ -1,5 +1,7 @@
 package com.seriousarch.leetcode.array;
 
+import com.alibaba.fastjson2.JSON;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -53,5 +55,41 @@ public class LeetCode1 {
         }
 
         return result;
+    }
+
+    /**
+     * 双指针法
+     *
+     * @param nums
+     * @param target
+     * @return
+     */
+    public int[] twoSumV3(int[] nums, int target) {
+        Map<Integer, Integer> map = new HashMap<>();
+
+        for (int i = 0, j = nums.length - 1; i <= j; i++, j--) {
+            int diff = target - nums[i];
+            if (map.containsKey(diff)) {
+                return new int[]{i, map.get(diff)};
+            } else {
+                map.put(nums[i], i);
+            }
+            diff = target - nums[j];
+            if (map.containsKey(diff)) {
+                return new int[]{j, map.get(diff)};
+            } else {
+                map.put(nums[j], j);
+            }
+        }
+
+        return null;
+    }
+
+    public static void main(String[] args) {
+        LeetCode1 solution = new LeetCode1();
+        int[] nums = new int[]{3,1,2,1,4};
+
+        int[] result = solution.twoSumV3(nums, 6);
+        System.out.println(JSON.toJSONString(result));
     }
 }
