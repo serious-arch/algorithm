@@ -27,32 +27,28 @@ public class LeetCode35 {
      * @param target
      * @return
      */
-    public int searchInsert2(int[] nums, int target) {
+    public int searchInsertV2(int[] nums, int target) {
         int left = 0;
         int right = nums.length - 1;
         while (left <= right) {
             int middle = (left + right) / 2;
-            if (target < nums[middle]) {
+            if (nums[middle] > target) {
                 right = middle - 1;
-            }
-            if (target > nums[middle]) {
+            } else if (nums[middle] < target) {
                 left = middle + 1;
-            }
-            if (target == nums[middle]) {
+            } else {
                 return middle;
             }
         }
-        if (left > right) {
-            return left;
-        }
-       return nums.length;
+        // 如果一直找不到，应该返回left
+        return left;
     }
 
     public static void main(String[] args) {
         LeetCode35 solution = new LeetCode35();
         int[] nums = {1, 3, 5, 6};
-        int val = 5;
-        int result = solution.searchInsert2(nums, val);
+        int val = 7;
+        int result = solution.searchInsertV2(nums, val);
         System.out.println(result);
     }
 }
