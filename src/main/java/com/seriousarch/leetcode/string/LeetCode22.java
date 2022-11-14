@@ -41,9 +41,38 @@ public class LeetCode22 {
         }
     }
 
+
+
+    public List<String> generateParenthesisV2(int n) {
+        backtrackingV2(n, 0, 0);
+        return result;
+    }
+
+    StringBuilder combination = new StringBuilder();
+    List<String> result = new ArrayList<>();
+
+    private void backtrackingV2(int n, int left, int right) {
+        if (combination.length() == n * 2) {
+            result.add(combination.toString());
+            return ;
+        }
+
+        if (left < n) {
+            combination.append('(');
+            backtrackingV2(n, left+1, right);
+            combination.deleteCharAt(combination.length() - 1);
+        }
+        if (right < left) {
+            combination.append(')');
+            backtrackingV2(n, left, right+1);
+            combination.deleteCharAt(combination.length() - 1);
+        }
+    }
+
+
     public static void main(String[] args) {
         LeetCode22 solution = new LeetCode22();
-        List<String> result = solution.generateParenthesis(3);
+        List<String> result = solution.generateParenthesisV2(3);
         System.out.println(result);
     }
 
