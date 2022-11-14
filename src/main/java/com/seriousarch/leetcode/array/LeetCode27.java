@@ -65,6 +65,7 @@ public class LeetCode27 {
         }
     }
 
+
     public static void main(String[] args) {
         LeetCode27 solution = new LeetCode27();
         int[] nums = {3,2,2,3};
