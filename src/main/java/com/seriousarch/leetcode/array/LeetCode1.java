@@ -2,8 +2,7 @@ package com.seriousarch.leetcode.array;
 
 import com.alibaba.fastjson2.JSON;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 /**
  * 两数之和

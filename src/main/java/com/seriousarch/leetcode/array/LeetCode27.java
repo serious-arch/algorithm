@@ -1,7 +1,5 @@
 package com.seriousarch.leetcode.array;
 
-import com.seriousarch.leetcode.linklist.ListNode;
-
 /**
  * 移除元素
  * See {@linktourl https://leetcode.cn/problems/remove-element/}
